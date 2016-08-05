@@ -1,10 +1,16 @@
 # rust-physical_constants
 
-Rust library providing access to the [CODATA recommended values for physical constants](http://physics.nist.gov/cuu/Constants/)
+Rust library providing access to the [CODATA recommended values for physical constants][codata].
 
 ## Current functionality
 
-Reflects the columns "Quantity" and "Value" in the complete [CODATA 2014 table](http://physics.nist.gov/cuu/Constants/Table/allascii.txt). For better or for worse, there are at the moment no changed quantity names, no omissions of possibly redundant quantities, and no recalculated exact values.
+A constant of type `f64` is exposed for each quantity in the [CODATA 2014 table][codata 2014].
+
+For better or for worse, at the moment,
+
+* no quantity names have been changed beyond what has been necessary to make them valid Rust identifiers,
+* no omissions of possibly redundant quantities has been made, and
+* none of the exact values have been recalculated for greater precision (instead, they appear with as many digits as they have in the original listing of quantities).
 
 ## Possible future developments
 
@@ -12,4 +18,6 @@ Reflects the columns "Quantity" and "Value" in the complete [CODATA 2014 table](
 * Uncertainties
 * [Uncertainty correlations](http://physics.nist.gov/cuu/Correlations/)
 * Previous CODATA datasets. (Note that comparisons of values from different datasets might not make sense as the definitions of the SI units might have changed. The old values might nevertheless be useful in reproducing old calculations.)
-* Identify a constant using an enum value instead of a string.
+
+[codata]: http://physics.nist.gov/cuu/Constants/
+[codata 2014]: http://physics.nist.gov/cuu/Constants/Table/allascii.txt
