@@ -2,3 +2,4 @@
 name = "physical_constants"
 version = "0.0.0"
 authors = ["Jonas Olson <jolson@kth.se>"]
+build = "build.rs"

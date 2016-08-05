@@ -2,27 +2,8 @@
 //!
 //! [codata]: http://physics.nist.gov/cuu/Constants/
 
-mod table;
-
-/// Takes a name of a physical constant and returns its value.
-///
-/// Names and units units are found in the [CODATA 2014 table][codata 2014].
-///
-/// # Examples
-///
-/// ```
-/// use physical_constants::physical_constants;
-///
-/// let epsilon_0 = physical_constants("electric constant").unwrap();
-/// let mu_0 = physical_constants("mag. constant").unwrap();
-/// println!("speed of massless particles: {}", 1f64/(epsilon_0*mu_0).sqrt());
-/// println!("impedance of free space: {}", (mu_0/epsilon_0).sqrt());
-/// ```
-///
-/// [codata 2014]: http://physics.nist.gov/cuu/Constants/Table/allascii.txt
-pub fn physical_constants(name: &str) -> Result<f64, ()> {
-    table::table(name)
-}
+// Include automatically generated function containing the physical constants.
+include!(concat!(env!("OUT_DIR"), "/table.rs"));
 
 #[cfg(test)]
 mod tests {
