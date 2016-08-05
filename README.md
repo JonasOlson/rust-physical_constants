@@ -8,8 +8,8 @@ A constant of type `f64` is exposed for each quantity in the [CODATA 2014 table]
 
 For better or for worse, at the moment,
 
-* no quantity names have been changed beyond what has been necessary to make them valid Rust identifiers,
-* no omissions of possibly redundant quantities has been made, and
+* no quantity names have been changed beyond what is necessary to make them valid Rust identifiers,
+* no omissions of possibly redundant quantities have been made, and
 * none of the exact values have been recalculated for greater precision (instead, they appear with as many digits as they have in the original listing of quantities).
 
 ## Possible future developments
