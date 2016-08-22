@@ -17,7 +17,7 @@ For better or for worse, at the moment,
 * Use a library (like [`dimensioned`](http://paholg.com/project/dimensioned/)) to return quantities in a form that carries along their physical dimensions and their units.
 * Uncertainties
 * [Uncertainty correlations](http://physics.nist.gov/cuu/Correlations/)
-* Previous CODATA datasets. (Note that comparisons of values from different datasets might not make sense as the definitions of the SI units might have changed. The old values might nevertheless be useful in reproducing old calculations.)
+* Previous CODATA datasets. (Note that comparisons between values from different datasets might be meaningless, as the definitions of the SI units might have changed. The old values can nevertheless be useful for reproducing old calculations.)
 
 [codata]: http://physics.nist.gov/cuu/Constants/
 [codata 2014]: http://physics.nist.gov/cuu/Constants/Table/allascii.txt
