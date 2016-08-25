@@ -12,10 +12,10 @@ fn main() {
         .map(|x| x.unwrap())
         .skip_while(|x| !x.contains("-----"))
         .skip(1) {
-            let mut words = line.split("  ")
-                .filter(|x| !(*x).eq(""))
-                .take(2);
-            let name = words.next().unwrap()
+            let mut words = line.trim().split("  ")
+                .filter(|x| !(*x).eq(""));
+            let original_name = words.next().unwrap();
+            let name = original_name
                 .replace("{220} lattice spacing of silicon",
                          "LATTICE_SPACING_220_OF_SILICON")
                 .replace("mom.um", "momentum")
@@ -30,6 +30,11 @@ fn main() {
             let val = words.next().unwrap()
                 .replace(" ", "")
                 .replace("...", "");
-            f_out.write_fmt(format_args!("pub const {}: f64 = {}f64;\n", name, val)).unwrap();
+            let unit = match words.skip(1).next() {
+                Some(u) => format!("unit: {}", u.trim()),
+                None => "dimensionless".to_string()
+            };
+            f_out.write_fmt(format_args!("/// {} ({})\npub const {}: f64 = {}f64;\n",
+                                         original_name, unit, name, val)).unwrap();
         }
 }
