@@ -1,7 +1,5 @@
 //! Provides access to the [CODATA recommended values for physical constants][codata].
 //!
-//! The units are the appropriate prefix-less SI units unless otherwise noted in the name of the quantity. A listing of all quantities and their units are found in the [CODATA 2014 table][codata 2014]
-//!
 //! # Examples
 //!
 //! ```
