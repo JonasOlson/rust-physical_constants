@@ -5,6 +5,7 @@ description = "CODATA recommended values of physical constants"
 documentation = "https://docs.rs/physical_constants/"
 repository = "https://github.com/JonasOlson/rust-physical_constants"
 keywords = ["physics", "constants", "CODATA"]
+categories = ["science"]
 license = "GPL-3.0"
 authors = ["Jonas Olson <jolson@kth.se>"]
 build = "build.rs"
