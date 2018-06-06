@@ -12,7 +12,8 @@ fn main() {
         .map(|x| x.unwrap())
         .skip_while(|x| !x.contains("-----"))
         .skip(1) {
-            let mut words = line.trim().split("  ")
+            let mut words = line.split("  ")
+                .map(|x| x.trim())
                 .filter(|x| !x.is_empty());
             let original_name = words.next().unwrap();
             let name = original_name
@@ -31,7 +32,7 @@ fn main() {
                 .replace(" ", "")
                 .replace("...", "");
             let unit = match words.skip(1).next() {
-                Some(u) => format!("unit: {}", u.trim()),
+                Some(u) => format!("unit: {}", u),
                 None => "dimensionless".to_string()
             };
             f_out.write_fmt(format_args!("/// {} ({})\npub const {}: f64 = {}f64;\n",
