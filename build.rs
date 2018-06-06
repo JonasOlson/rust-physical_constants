@@ -33,7 +33,7 @@ fn main() {
                 .replace("...", "");
             let unit = match words.skip(1).next() {
                 Some(u) => format!("unit: {}", u),
-                None => "dimensionless".to_string()
+                None => "dimensionless".to_owned()
             };
             f_out.write_fmt(format_args!("/// {} ({})\npub const {}: f64 = {}f64;\n",
                                          original_name, unit, name, val)).unwrap();
