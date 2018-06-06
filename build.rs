@@ -13,7 +13,7 @@ fn main() {
         .skip_while(|x| !x.contains("-----"))
         .skip(1) {
             let mut words = line.trim().split("  ")
-                .filter(|x| !(*x).eq(""));
+                .filter(|x| !x.is_empty());
             let original_name = words.next().unwrap();
             let name = original_name
                 .replace("{220} lattice spacing of silicon",
