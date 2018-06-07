@@ -70,7 +70,7 @@ mod tests {
 
     #[test]
     fn test_changed_name() {
-        // This quantity is called "{220} lattice spacing of silicon" in the original listing. To get a valid identifier, which must not contain curly brackets and must not begin with a digit, its name has to be changed entirely, not just by a simple character replacement. This test checks that the new name came through as it should.
+        // This quantity is called "{220} lattice spacing of silicon" in the original listing from CODATA. To get a valid identifier, which must not contain curly brackets and must not begin with a digit, its name has to be changed entirely, not just by a simple character substitution. This test checks that the new name came through as it should.
         assert_eq!(LATTICE_SPACING_220_OF_SILICON, 192.0155714e-12);
     }
 }
