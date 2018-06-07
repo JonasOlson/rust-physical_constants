@@ -7,6 +7,7 @@
 //!
 //! let epsilon_0 = physical_constants::ELECTRIC_CONSTANT;
 //! let mu_0 = physical_constants::MAG_CONSTANT;
+//!
 //! println!("speed of massless particles: {} m/s", 1f64/(epsilon_0*mu_0).sqrt());
 //! println!("impedance of free space: {} Ω", (mu_0/epsilon_0).sqrt());
 //! ```
