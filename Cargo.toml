@@ -9,3 +9,6 @@ categories = ["science"]
 license = "GPL-3.0"
 authors = ["Jonas Olson <jolson@kth.se>"]
 build = "build.rs"
+
+[build-dependencies]
+regex = "1.0.0"

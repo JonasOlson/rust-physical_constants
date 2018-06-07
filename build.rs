@@ -1,9 +1,14 @@
+extern crate regex;
+use regex::Regex;
+
 use std::env;
 use std::fs::File;
 use std::io::prelude::*;
 use std::io::BufReader;
 
 fn main() {
+    let exponents = Regex::new(r"\^(?P<exponent>-?\d+)").unwrap();
+
     let f_in = BufReader::new(File::open("src/allascii.txt").unwrap());
     let mut f_out = File::create(env::var("OUT_DIR").unwrap() + "/table.rs").unwrap();
 
@@ -30,7 +35,12 @@ fn main() {
             .to_uppercase();
         let val = words.next().unwrap().replace(" ", "").replace("...", "");
         let unit = match words.skip(1).next() {
-            Some(u) => format!("unit: {}", u),
+            Some(u) => format!(
+                "unit: {}",
+                exponents
+                    .replace_all(u, "<sup>${exponent}</sup>")
+                    .replace(" ", "⋅")
+            ),
             None => "dimensionless".to_owned(),
         };
         f_out
