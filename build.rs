@@ -17,8 +17,8 @@ fn main() {
         .skip_while(|x| !x.contains("-----"))
         .skip(1)
     {
-        let mut words = line.split("  ").map(|x| x.trim()).filter(|x| !x.is_empty());
-        let original_name = words.next().unwrap();
+        let mut columns = line.split("  ").map(|x| x.trim()).filter(|x| !x.is_empty());
+        let original_name = columns.next().unwrap();
         let name = original_name
             .replace(
                 "{220} lattice spacing of silicon",
@@ -33,8 +33,8 @@ fn main() {
             .replace(")", "")
             .replace("/", "_PER_")
             .to_uppercase();
-        let val = words.next().unwrap().replace(" ", "").replace("...", "");
-        let unit = match words.skip(1).next() {
+        let val = columns.next().unwrap().replace(" ", "").replace("...", "");
+        let unit = match columns.skip(1).next() {
             Some(u) => format!(
                 "unit: {}",
                 exponents
