@@ -20,11 +20,6 @@ fn main() {
         let mut columns = line.split("  ").map(|x| x.trim()).filter(|x| !x.is_empty());
         let original_name = columns.next().unwrap();
         let name = original_name
-            .replace(
-                "{220} lattice spacing of silicon",
-                "LATTICE_SPACING_220_OF_SILICON",
-            )
-            .replace("mom.um", "momentum")
             .replace(" ", "_")
             .replace("-", "_")
             .replace(".", "")
