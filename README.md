@@ -4,7 +4,7 @@ Rust library providing access to the [CODATA recommended values for physical con
 
 ## Current functionality
 
-A constant of type `f64` is exposed for each quantity in the [CODATA 2014 table][codata 2014].
+A constant of type `f64` is exposed for each quantity in the [CODATA 2018 table][codata 2018].
 
 For better or for worse, at the moment,
 
