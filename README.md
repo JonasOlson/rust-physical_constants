@@ -20,4 +20,4 @@ For better or for worse, at the moment,
 * Previous CODATA datasets. (Note that comparisons between values from different datasets might be meaningless, as the definitions of the SI units might have changed. The old values can nevertheless be useful for reproducing old calculations.)
 
 [codata]: http://physics.nist.gov/cuu/Constants/
-[codata 2014]: http://physics.nist.gov/cuu/Constants/Table/allascii.txt
+[codata 2018]: http://physics.nist.gov/cuu/Constants/Table/allascii.txt
