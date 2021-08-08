@@ -12,7 +12,8 @@ fn main() {
     let f_in = BufReader::new(File::open("src/allascii.txt").unwrap());
     let mut f_out = File::create(env::var("OUT_DIR").unwrap() + "/constants.rs").unwrap();
 
-    for line in f_in.lines()
+    for line in f_in
+        .lines()
         .map(|x| x.unwrap())
         .skip_while(|x| !x.contains("-----"))
         .skip(1)
