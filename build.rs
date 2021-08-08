@@ -29,7 +29,7 @@ fn main() {
             .replace("/", "_PER_")
             .to_uppercase();
         let val = columns.next().unwrap().replace(" ", "").replace("...", "");
-        let unit = match columns.skip(1).next() {
+        let unit = match columns.nth(1) {
             Some(u) => format!(
                 "unit: {}",
                 exponents
