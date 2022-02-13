@@ -11,6 +11,7 @@ fn main() {
 
     let f_in = BufReader::new(File::open("src/allascii.txt").unwrap());
     let mut f_out = File::create(env::var("OUT_DIR").unwrap() + "/constants.rs").unwrap();
+    let mut frac_out = File::create(env::var("OUT_DIR").unwrap() + "/constants_pq.rs").unwrap();
 
     for line in f_in
         .lines()
@@ -30,19 +31,37 @@ fn main() {
             .replace("/", "_PER_")
             .to_uppercase();
         let val = columns.next().unwrap().replace(" ", "").replace("...", "");
-        let unit = match columns.nth(1) {
-            Some(u) => format!(
+        let (unit, unit_org) = match columns.nth(1) {
+            Some(u) => (format!(
                 "unit: {}",
                 exponents
                     .replace_all(u, "<sup>${exponent}</sup>")
                     .replace(" ", "⋅")
+                ),
+                match u {
+                    "(GeV/c^2)^-2" => "c4/GeV2".to_owned(),
+                    u => u.chars().fold(String::new(), |mut s, c| {
+                        if c != '^' {
+                            s.push(c)
+                        }
+                        s
+                    }),
+                }
             ),
-            None => "dimensionless".to_owned(),
+            None => ("dimensionless".to_owned(), "\u{2014}".to_owned())
         };
         f_out
             .write_fmt(format_args!(
                 "/// {} ({})\npub const {}: f64 = {}f64;\n",
                 original_name, unit, name, val
+            ))
+            .unwrap();
+        frac_out
+            .write_fmt(format_args!(
+                "/// {} ({})\n\
+                pub const {}: unit::PhysicalQuantity<unit::Frac, unit::dim!(\"{}\")> = \n\
+                    \tunit::pq!(unit::frac!({}), \"{}\", Frac);\n",
+                original_name, unit, name, unit_org, val, unit_org
             ))
             .unwrap();
     }

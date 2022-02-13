@@ -9,6 +9,13 @@ categories = ["science"]
 license = "GPL-3.0"
 authors = ["Jonas Olson <jolson@kth.se>"]
 build = "build.rs"
+edition = '2021'
+
+[dependencies]
+unit = { version = "0.2", path = "../../GitLab/unit-rs/unit.rs", optional = true }
 
 [build-dependencies]
 regex = "1.0.0"
+
+[features]
+default = ["unit"]
