@@ -44,40 +44,58 @@ mod tests {
     fn test_no_exponent() {
         // A value that has no exponent in the listing
         assert_eq!(ATOMIC_MASS_CONSTANT_ENERGY_EQUIVALENT_IN_MEV, 931.49410242);
+        assert_eq!(
+            unit::unit!("MeV").value(pq::ATOMIC_MASS_CONSTANT_ENERGY_EQUIVALENT_IN_MEV).unwrap().to_f64(),
+            931.49410242);
     }
 
     #[test]
     fn test_positive_exponent() {
         assert_eq!(BOLTZMANN_CONSTANT_IN_HZ_PER_K, 2.083661912e10);
+        assert_eq!(
+            unit::unit!("Hz K-1").value(pq::BOLTZMANN_CONSTANT_IN_HZ_PER_K).unwrap().to_f64(),
+            2.083661912e10);
     }
 
     #[test]
     fn test_negative_exponent() {
         assert_eq!(CLASSICAL_ELECTRON_RADIUS, 2.8179403262e-15);
+        assert_eq!(
+            unit::unit!("m").value(pq::CLASSICAL_ELECTRON_RADIUS).unwrap().to_f64(),
+            2.8179403262e-15);
     }
 
     #[test]
     fn test_negative_value() {
         assert_eq!(ELECTRON_CHARGE_TO_MASS_QUOTIENT, -1.75882001076e11);
+        assert_eq!(
+            unit::unit!("C kg-1").value(pq::ELECTRON_CHARGE_TO_MASS_QUOTIENT).unwrap().to_f64(),
+            -1.75882001076e11);
     }
 
     #[test]
     fn test_dimensionless_value() {
         assert_eq!(PROTON_ELECTRON_MASS_RATIO, 1836.15267343);
+        assert_eq!(
+            unit::unit!("—").value(pq::PROTON_ELECTRON_MASS_RATIO).unwrap().to_f64(),
+            1836.15267343);
     }
 
     #[test]
     fn test_first_quantity() {
         // The first quantity listed in the table
         assert_eq!(ALPHA_PARTICLE_ELECTRON_MASS_RATIO, 7294.29954142);
+        assert_eq!(
+            unit::unit!("—").value(pq::ALPHA_PARTICLE_ELECTRON_MASS_RATIO).unwrap().to_f64(),
+            7294.29954142);
     }
 
     #[test]
     fn test_last_quantity() {
         // The last quantity listed in the table
         assert_eq!(W_TO_Z_MASS_RATIO, 0.88153);
+        assert_eq!(
+            unit::unit!("—").value(pq::W_TO_Z_MASS_RATIO).unwrap().to_f64(),
+            0.88153);
     }
 }
-/*
-first radiation constant for spectral radiance              1.191 042 972... e-16    (exact)                  W m^2 sr^-1
-*/

@@ -40,6 +40,8 @@ fn main() {
                 ),
                 match u {
                     "(GeV/c^2)^-2" => "c4/GeV2".to_owned(),
+                    "u" => "Da".to_owned(),
+                    "ohm" => "\u{03A9}".to_owned(),
                     u => u.chars().fold(String::new(), |mut s, c| {
                         if c != '^' {
                             s.push(c)
