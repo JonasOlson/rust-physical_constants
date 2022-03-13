@@ -12,7 +12,7 @@ build = "build.rs"
 edition = '2021'
 
 [dependencies]
-unit = { version = "0.2", path = "../../GitLab/unit-rs/unit.rs", optional = true }
+unit = { git = "https://gitlab.com/fton/unit.rs.git", version = "0.2", optional = true }
 
 [build-dependencies]
 regex = "1.0.0"

@@ -36,7 +36,7 @@ mod tests {
         // An exact quantity whose decimal expansion ends with "..." in the table
         assert_eq!(SPEED_OF_LIGHT_IN_VACUUM, 299792458f64);
         assert_eq!(
-            unit::unit!("m s-1").value(pq::SPEED_OF_LIGHT_IN_VACUUM).unwrap().to_f64(),
+            unit::unit!("m s-1").value(pq::SPEED_OF_LIGHT_IN_VACUUM).to_f64(),
             299792458f64);
     }
 
@@ -45,7 +45,7 @@ mod tests {
         // A value that has no exponent in the listing
         assert_eq!(ATOMIC_MASS_CONSTANT_ENERGY_EQUIVALENT_IN_MEV, 931.49410242);
         assert_eq!(
-            unit::unit!("MeV").value(pq::ATOMIC_MASS_CONSTANT_ENERGY_EQUIVALENT_IN_MEV).unwrap().to_f64(),
+            unit::unit!("MeV").value(pq::ATOMIC_MASS_CONSTANT_ENERGY_EQUIVALENT_IN_MEV).to_f64(),
             931.49410242);
     }
 
@@ -53,7 +53,7 @@ mod tests {
     fn test_positive_exponent() {
         assert_eq!(BOLTZMANN_CONSTANT_IN_HZ_PER_K, 2.083661912e10);
         assert_eq!(
-            unit::unit!("Hz K-1").value(pq::BOLTZMANN_CONSTANT_IN_HZ_PER_K).unwrap().to_f64(),
+            unit::unit!("Hz K-1").value(pq::BOLTZMANN_CONSTANT_IN_HZ_PER_K).to_f64(),
             2.083661912e10);
     }
 
@@ -61,7 +61,7 @@ mod tests {
     fn test_negative_exponent() {
         assert_eq!(CLASSICAL_ELECTRON_RADIUS, 2.8179403262e-15);
         assert_eq!(
-            unit::unit!("m").value(pq::CLASSICAL_ELECTRON_RADIUS).unwrap().to_f64(),
+            unit::unit!("m").value(pq::CLASSICAL_ELECTRON_RADIUS).to_f64(),
             2.8179403262e-15);
     }
 
@@ -69,7 +69,7 @@ mod tests {
     fn test_negative_value() {
         assert_eq!(ELECTRON_CHARGE_TO_MASS_QUOTIENT, -1.75882001076e11);
         assert_eq!(
-            unit::unit!("C kg-1").value(pq::ELECTRON_CHARGE_TO_MASS_QUOTIENT).unwrap().to_f64(),
+            unit::unit!("C kg-1").value(pq::ELECTRON_CHARGE_TO_MASS_QUOTIENT).to_f64(),
             -1.75882001076e11);
     }
 
@@ -77,7 +77,7 @@ mod tests {
     fn test_dimensionless_value() {
         assert_eq!(PROTON_ELECTRON_MASS_RATIO, 1836.15267343);
         assert_eq!(
-            unit::unit!("—").value(pq::PROTON_ELECTRON_MASS_RATIO).unwrap().to_f64(),
+            unit::unit!("—").value(pq::PROTON_ELECTRON_MASS_RATIO).to_f64(),
             1836.15267343);
     }
 
@@ -86,7 +86,7 @@ mod tests {
         // The first quantity listed in the table
         assert_eq!(ALPHA_PARTICLE_ELECTRON_MASS_RATIO, 7294.29954142);
         assert_eq!(
-            unit::unit!("—").value(pq::ALPHA_PARTICLE_ELECTRON_MASS_RATIO).unwrap().to_f64(),
+            unit::unit!("—").value(pq::ALPHA_PARTICLE_ELECTRON_MASS_RATIO).to_f64(),
             7294.29954142);
     }
 
@@ -95,7 +95,7 @@ mod tests {
         // The last quantity listed in the table
         assert_eq!(W_TO_Z_MASS_RATIO, 0.88153);
         assert_eq!(
-            unit::unit!("—").value(pq::W_TO_Z_MASS_RATIO).unwrap().to_f64(),
+            unit::unit!("—").value(pq::W_TO_Z_MASS_RATIO).to_f64(),
             0.88153);
     }
 }
