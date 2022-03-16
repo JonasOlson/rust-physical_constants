@@ -61,8 +61,8 @@ fn main() {
         frac_out
             .write_fmt(format_args!(
                 "/// {} ({})\n\
-                pub const {}: unit::PhysicalQuantity<unit::Frac, unit::dim!(\"{}\")> = \n\
-                    \tunit::pq!(unit::frac!({}), \"{}\", Frac);\n",
+                pub const {}: unitage::PhysicalQuantity<unitage::Frac, unitage::dim!(\"{}\")> = \n\
+                    \tunitage::pq!(unitage::frac!({}), \"{}\", Frac);\n",
                 original_name, unit, name, unit_org, val, unit_org
             ))
             .unwrap();
