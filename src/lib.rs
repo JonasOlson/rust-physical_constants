@@ -1,3 +1,4 @@
+#![no_std]
 //! Provides access to the [CODATA recommended 2018 values for physical constants][codata].
 //!
 //! # Examples
