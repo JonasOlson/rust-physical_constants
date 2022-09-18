@@ -1,6 +1,6 @@
 [package]
 name = "physical_constants"
-version = "0.4.1"
+version = "0.5.0"
 description = "CODATA recommended values of physical constants"
 documentation = "https://docs.rs/physical_constants/"
 repository = "https://github.com/JonasOlson/rust-physical_constants"
