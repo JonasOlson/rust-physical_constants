@@ -41,8 +41,7 @@ fn main() {
         };
         f_out
             .write_fmt(format_args!(
-                "/// {} ({})\npub const {}: f64 = {}f64;\n",
-                original_name, unit, name, val
+                "/// {original_name} ({unit})\npub const {name}: f64 = {val}f64;\n"
             ))
             .unwrap();
     }
