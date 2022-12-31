@@ -1,3 +1,5 @@
+#![allow(clippy::single_char_pattern)]
+
 use regex::Regex;
 
 use std::env;
