@@ -38,7 +38,7 @@ fn main() {
                     .replace_all(u, "<sup>${exponent}</sup>")
                     .replace(" ", "⋅")
             ),
-            None => "dimensionless".to_owned(),
+            None => String::from("dimensionless"),
         };
         f_out
             .write_fmt(format_args!(
