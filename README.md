@@ -4,7 +4,7 @@ Rust library providing access to the [CODATA recommended values for physical con
 
 ## Current functionality
 
-A constant of type `f64` is exposed for each quantity in the [CODATA 2018 table][codata 2018].
+A constant of type `f64` is exposed for each quantity in the [CODATA 2022 table][codata 2022].
 
 For better or for worse, at the moment,
 
@@ -20,4 +20,4 @@ For better or for worse, at the moment,
 * Previous CODATA datasets. (Note that comparisons between values from different datasets might be meaningless, as the definitions of the SI units might have changed. The old values can nevertheless be useful for reproducing old calculations.)
 
 [codata]: http://physics.nist.gov/cuu/Constants/
-[codata 2018]: http://physics.nist.gov/cuu/Constants/Table/allascii.txt
+[codata 2022]: http://physics.nist.gov/cuu/Constants/Table/allascii.txt
