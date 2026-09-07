@@ -1,6 +1,6 @@
 [package]
 name = "physical_constants"
-version = "0.5.0"
+version = "0.6.0"
 description = "CODATA recommended values of physical constants"
 documentation = "https://docs.rs/physical_constants/"
 repository = "https://github.com/JonasOlson/rust-physical_constants"
@@ -12,4 +12,4 @@ authors = ["Jonas Olson <jolson@kth.se>"]
 build = "build.rs"
 
 [build-dependencies]
-regex = "1.0.0"
+regex = "1.13.1"
