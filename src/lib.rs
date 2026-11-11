@@ -6,11 +6,11 @@
 //! ```
 //! use physical_constants;
 //!
-//! let epsilon_0 = physical_constants::VACUUM_ELECTRIC_PERMITTIVITY;
-//! let mu_0 = physical_constants::VACUUM_MAG_PERMEABILITY;
+//! const epsilon_0: f64 = physical_constants::VACUUM_ELECTRIC_PERMITTIVITY;
+//! const mu_0: f64 = physical_constants::VACUUM_MAG_PERMEABILITY;
 //!
-//! println!("speed of massless particles: {} m/s", 1f64/(epsilon_0*mu_0).sqrt());
-//! println!("impedance of free space: {} Ω", (mu_0/epsilon_0).sqrt());
+//! println!("speed of massless particles: {speed} m/s", speed = (epsilon_0*mu_0).sqrt().recip());
+//! println!("impedance of free space: {impedance} Ω", impedance = (mu_0/epsilon_0).sqrt());
 //! ```
 //!
 //! [codata]: http://physics.nist.gov/cuu/Constants/
